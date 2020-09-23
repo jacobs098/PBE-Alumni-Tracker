@@ -7,14 +7,16 @@
 <p>Please make your password and username contain as many or more than 8 characters:</p>
 
 <form action="/action_page_for_login.php">
-	<label for="uname">Username:</label>
-  <input type="password" id="uname" name="uname" pattern=".{8,}" title="Eight or more characters">
+	<label for="email">Enter your email:</label>
+<input type="email" id="email" name="email">
   <label for="pwd">
   <br> Password:</label>
   <input type="password" id="pwd" name="pwd" pattern=".{8,}" title="Eight or more characters">
   <br>
   <input type="submit">
 </form>
+
+<p>This code submits the form to /action_page_for_login.php</p>
 
 </body>
 </html>
