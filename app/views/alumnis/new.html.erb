@@ -1,0 +1,48 @@
+<%= link_to("<< Back to List", alumnis_path, :class => 'back-link') %>
+
+<div class="alumnis new">
+  <h2>Profile Information</h2>
+
+  <%= form_for(@alumni) do |f| %>
+
+    <table summary="Alumni form fields">
+      <tr>
+        <th>First name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td><%= f.text_field(:phone_number) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Graduation Year</th>
+        <td><%= f.text_field(:graduation_year) %></td>
+      </tr>
+      <tr>
+        <th>Degree</th>
+        <td><%= f.text_field(:degree) %></td>
+      </tr>
+      <tr>
+        <th>Job Title</th>
+        <td><%= f.text_field(:job_title) %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= f.text_field(:password) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Account") %>
+    </div>
+
+  <% end %>
+</div>

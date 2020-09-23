@@ -1,0 +1,45 @@
+<%= link_to("<< Back to List", alumnis_path, :class => 'back-link') %>
+
+<div class="alumnis show">
+  <h2>Show Alumni</h2>
+
+  <table summary="Alumni detail view">
+    <tr>
+      <th>First name</th>
+      <td><%= @alumni.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @alumni.last_name %></td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td><%= @alumni.phone_number.to_i %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @alumni.email %></td>
+    </tr>
+    <tr>
+      <th>Graduation Year</th>
+      <td><%= @alumni.graduation_year.to_i %></td>
+    </tr>
+    <tr>
+      <th>Degree</th>
+      <td><%= @alumni.degree %></td>
+    </tr>
+    <tr>
+      <th>Job Title</th>
+      <td><%= @alumni.job_title %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @alumni.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @alumni.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
