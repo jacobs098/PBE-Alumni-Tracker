@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200923015731) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "degree"
     t.string   "job_title"
     t.decimal  "phone_number"

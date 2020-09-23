@@ -1,9 +1,16 @@
 class AlumnisController < ApplicationController
+
+  before_action :confirm_logged_in, :except => [:new, :create]
+
   def index
     @alumnis = Alumni.all
   end
 
   def show
+    @alumni = Alumni.find(params[:id])
+  end
+
+  def user_info
     @alumni = Alumni.find(params[:id])
   end
 
@@ -14,7 +21,8 @@ class AlumnisController < ApplicationController
   def create
     @alumni = Alumni.new(alumni_params)
     if @alumni.save
-      redirect_to(alumnis_path)
+      session[:alumni_id] = @alumni.id
+      redirect_to(user_info_alumni_path(@alumni))
     else
       render('new')
     end
@@ -27,7 +35,7 @@ class AlumnisController < ApplicationController
   def update
     @alumni = Alumni.find(params[:id])
     if @alumni.update_attributes(alumni_params)
-      redirect_to(alumni_path(@alumni))
+      redirect_to(user_info_alumni_path(@alumni))
     else
       render('edit')
     end
@@ -40,12 +48,13 @@ class AlumnisController < ApplicationController
   def destroy
     @alumni = Alumni.find(params[:id])
     @alumni.destroy
-    redirect_to(alumnis_path)
+    session[:alumni_id] = nil
+    redirect_to(root_path)
   end
 
   private
 
   def alumni_params
-    params.require(:alumni).permit(:first_name, :last_name, :email, :degree, :job_title, :phone_number, :graduation_year)
+    params.require(:alumni).permit(:first_name, :last_name, :email, :degree, :job_title, :phone_number, :graduation_year, :password)
   end
 end

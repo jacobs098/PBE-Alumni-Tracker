@@ -1,24 +1,23 @@
 <div class="alumnis index">
-  <h2>Alumnis</h2>
+  <h2>All Alumni</h2>
 
-  <%= link_to("Add New Alumni", new_alumni_path, :class => 'action new') %>
+<!-- fix -->
+  <%= link_to("Back to My Info", user_info_alumni_path(session[:alumni_id]), :class => 'action new') %>
 
   <table class="listing" summary="Alumni list">
     <tr class="header">
-      <th>FNAME</th>
-      <th>last_name</th>
-      <th>graduation_year</th>
-      <th>Actions</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Graduation Year</th>
+      <th>More Info</th>
     </tr>
     <% @alumnis.each do |alumni| %>
     <tr>
       <td><%= alumni.first_name %></td>
       <td><%= alumni.last_name %></td>
-      <td><%= alumni.graduation_year %></td>
+      <td><%= alumni.graduation_year.to_i %></td>
       <td class="actions">
         <%= link_to("Show", alumni_path(alumni), :class => 'action show') %>
-        <%= link_to("Edit", edit_alumni_path(alumni), :class => 'action edit') %>
-        <%= link_to("Delete", delete_alumni_path(alumni), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

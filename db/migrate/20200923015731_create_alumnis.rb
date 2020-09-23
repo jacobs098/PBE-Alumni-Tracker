@@ -5,7 +5,7 @@ class CreateAlumnis < ActiveRecord::Migration[5.0]
       t.string "first_name"
       t.string "last_name"
       t.string "email"
-      t.string "password"
+      t.string "password_digest"
       t.string "degree"
       t.string "job_title"
       t.numeric "phone_number"

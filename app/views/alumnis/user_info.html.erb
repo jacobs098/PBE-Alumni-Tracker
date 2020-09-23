@@ -1,0 +1,48 @@
+<div class="alumnis show">
+  <h2>Profile</h2>
+
+  <table summary="Alumni detail view">
+    <tr>
+      <th>First name</th>
+      <td><%= @alumni.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @alumni.last_name %></td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td><%= @alumni.phone_number.to_i %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @alumni.email %></td>
+    </tr>
+    <tr>
+      <th>Graduation Year</th>
+      <td><%= @alumni.graduation_year.to_i %></td>
+    </tr>
+    <tr>
+      <th>Degree</th>
+      <td><%= @alumni.degree %></td>
+    </tr>
+    <tr>
+      <th>Job Title</th>
+      <td><%= @alumni.job_title %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @alumni.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @alumni.updated_at %></td>
+    </tr>
+  </table>
+
+  <%= link_to("Edit Info", edit_alumni_path(@alumni), :class => 'action edit') %>
+  <%= link_to("See All Info", alumnis_path(@alumni), :class => 'action show') %>
+  <%= link_to("Delete User", delete_alumni_path(@alumni), :class => 'action delete') %>
+  <%= link_to("Logout", home_logout_path) %>
+
+</div>
